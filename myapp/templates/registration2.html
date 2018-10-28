@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+   <title>Sample</title>
+   <link rel="stylesheet" href="{% static 'style.css' %}"/>
+   </head>
+<body background="{% static 'images/background.jpg' %}">
+<h1>Student Registration Form</h1>
+
+<form method="POST" action="" class="col-md-5">
+    {% csrf_token %}
+    {{ frm2.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="/display2">Click Here to show data</a>
+</body>
+</html>

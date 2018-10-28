@@ -1,0 +1,37 @@
+<html>
+<head>  
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+     {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Roll No.</th>  
+        <th>Student Name</th>  
+        <th>Student Class</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for employee in emp %}  
+    <tr>  
+        <td>{{ employee.rollno }}</td>  
+        <td>{{ employee.name }}</td>  
+        <td>{{ employee.clas }}</td>  
+        <td>  
+            <a href="/edit2/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete2/{{ employee.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br><br>  
+<center><a href="/reg2" class="btn btn-primary">Add New Record</a></center>
+<br><br><br><br>
+<center><a href="/logout" class="btn btn-primary">Logout</a></center>    
+</body>  
+</html>  

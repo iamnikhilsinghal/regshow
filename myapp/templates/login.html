@@ -1,0 +1,16 @@
+{% block content %}
+       <div style="width:300px;height:150px;margin-left:350px">
+		<h2 style="width:300px;height:40px;background-color:gray;font-family:stencil;font-size:25px;padding-top:15px"><center>Login</center></h2>
+		<form method="post" action="/check">{% csrf_token %}
+		    <table>
+			   <tr height=50px><th>Username:</th>
+			   <td><input type="text" name="username" value="" id="username"></td></tr>
+			   <tr height=50px><th>Password:</th>
+			   <td><input type="password" name="password" value="" id="password"></td></tr>
+			</table><br>
+            <input type="submit" value="Login" />
+            
+	    </form>
+     <a href="/reg">Register</a>
+	 </div>
+{% endblock %}	 

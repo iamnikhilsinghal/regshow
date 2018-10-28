@@ -1,0 +1,46 @@
+<html>
+<head>  
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+     {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Employee ID</th>  
+        <th>First Name</th>  
+        <th>Last Name</th>  
+        <th>Email</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for employee in emp %}  
+    <tr>  
+        <td>{{ employee.username }}</td>  
+        <td>{{ employee.first_name }}</td>  
+        <td>{{ employee.last_name }}</td>  
+        <td>{{ employee.email }}</td>  
+        <td>  
+            <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ employee.id }}">Delete</a>  
+        </td>  
+    </tr> 
+{% endfor %} 
+    </tbody>  
+</table>  
+<br><br>  
+<center><a href="/reg" class="btn btn-primary">Add New Record</a></center>
+<br><br><br><br>
+<center><a href="/logout" class="btn btn-primary">Logout</a></center> 
+
+<form action="/search" method='POST'>
+	{% csrf_token %}
+	<label>Enter Name To Search : </label>
+	<input type='text' name='search_box1'>
+	<button type="submit" name="Search">Search</button>
+</form>   
+</body>  
+</html>  

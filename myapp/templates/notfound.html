@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>hello app</title>
+</head>
+<body>
+
+<div>
+
+<div style="margin-left:400px">
+<form action='/search_query/' method="post">{% csrf_token %}
+        <div>
+            <input type="text"  placeholder="Search" name="search_box" id="search_box">
+            
+                <button type="submit">Search</button>
+            
+        </div>
+ </form>
+</div>
+
+</div>
+<h1><center>List of records</center></h1>
+<div style="margin-left:470px">
+
+<h3>Record not Found..!</h3>
+</div>
+
+<br /><br />
+<a href="/">Home page</a>
+</body>
+</html>
